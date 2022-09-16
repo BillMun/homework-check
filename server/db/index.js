@@ -60,7 +60,12 @@ const syncAndSeed = async () => {
     const studentAssigns = await StudentAssignment.bulkCreate([
       {studentId:megan.id, assignmentId:triangle.id, completed:true},
       {studentId:charlie.id, assignmentId:triangle.id, completed:0},
-      {studentId:bill.id, assignmentId:triangle.id, completed:1}
+      {studentId:bill.id, assignmentId:triangle.id, completed:1},
+      {studentId:sally.id, assignmentId:triangle.id, completed:0},
+      {studentId:megan.id, assignmentId:factor.id, completed:true},
+      {studentId:charlie.id, assignmentId:factor.id, completed:0},
+      {studentId:bill.id, assignmentId:factor.id, completed:1},
+      {studentId:sally.id, assignmentId:factor.id, completed:0}
     ])
 
     console.log(`

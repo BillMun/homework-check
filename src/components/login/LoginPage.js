@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from 'react-redux'
-import { campusReducer } from "../../../../../2208-jpfp/src/store/components/campus";
-import { teacherLogin } from "../../store/Teacher";
+import { teacherLogin } from "../../store/redux";
 import AllAssignments from "../assignments/AllAssignments";
 import AllClassrooms from "../classrooms/AllClassrooms";
-import NavBar from "../navBar/navBar";
 
 
 function LoginPage (){

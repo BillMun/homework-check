@@ -30,8 +30,9 @@ function GradeAssignments (){
             <select onClick={(event)=>{
                 setAssignId(Number(event.target.value))
                 if(event.target.value==-1){setGrading(false)}
-                else{setGrading(false) 
-                    setGrading(true)}
+                else{setGrading(false)
+                    setTimeout(()=>{setGrading(true)},1)
+                    }
             }}>
                 <option value='-1'>None</option>
                 {classroom.assignmentClassrooms.map(elem=>

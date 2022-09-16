@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from "react";
 import axios from 'axios'
 import { useDispatch } from "react-redux";
-import { getClassrooms } from "../../store/Teacher";
+import { getClassrooms, getAssignments } from "../../store/redux";
 
 function CreateAndAssign (props){
     const dispatch = useDispatch()
     useEffect(()=>{
-
     },[submit])
 
     const [submit, newSubmit] = useState(false)
-    const[newStudent, setNewStudent] = useState({row:props.row, col:props.col, classroomId:props.classroomId})
+    const[newStudent, setNewStudent] = useState({row:props.row, col:props.col, classroomId:props.classroom.id})
     const handleChange = props => event =>{
         setNewStudent({
             ...newStudent,
@@ -21,10 +20,17 @@ function CreateAndAssign (props){
         let createStudent = await axios.post('/api/student', student)
         return createStudent
     }
-    const handleSubmit =(event)=>{
+    const studentAssigns = async (obj)=>{
+        let studentAssignCreate = await axios.post(`/api/studentAssignment`,obj)
+    }
+    console.log(props.classroom)
+    const handleSubmit =async (event)=>{
         event.preventDefault()
-        createStudent(newStudent)
+        let {data}= await createStudent(newStudent)
+        props.classroom.assignmentClassrooms.forEach(async elem=>
+            await studentAssigns({studentId:data.id, assignmentId:elem.assignment.id}))
         dispatch(getClassrooms())
+        dispatch(getAssignments())
         newSubmit(!submit)
     }
 

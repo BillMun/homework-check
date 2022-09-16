@@ -39,7 +39,7 @@ function SingleClassroom (){
                         {student.name ? student.name : 
                         <div className="small">Unassigned Seat
                         <hr/>
-                        {addStudents ? <CreateAndAssign row={row} col={col} classroomId={classroom.id}/>:null}
+                        {addStudents ? <CreateAndAssign row={row} col={col} classroom={classroom}/>:null}
                         </div> }  
                     </div> )}
                 </div>)}</>:null}

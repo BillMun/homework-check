@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from 'axios'
-import { getClassrooms } from "../../store/Teacher";
+import { getClassrooms } from "../../store/redux";
 
 function CreateClassroom (){
     const teacher = useSelector(state=>state.teacher)
@@ -59,5 +59,4 @@ function CreateClassroom (){
         </div>
     )
 }
-
 export default CreateClassroom

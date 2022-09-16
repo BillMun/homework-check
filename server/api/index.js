@@ -6,5 +6,6 @@ router.use('/student', require('./student'))
 router.use('/classroom', require('./classroom'))
 router.use('/assignment', require('./assignment'))
 router.use('/assignmentClassroom',require('./assignmentClassroom'))
+router.use('/studentAssignment',require(`./studentAssignment`))
 
 module.exports = router;

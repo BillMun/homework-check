@@ -1,7 +1,7 @@
 import {createStore, applyMiddleware, combineReducers} from "redux";
 import thunk from "redux-thunk";
 import loggingMiddleware from 'redux-logger'
-import { AssignmentReducer, ClassroomReducer, TeacherReducer } from "./Teacher";
+import { AssignmentReducer, ClassroomReducer, TeacherReducer } from "./redux";
 
 const rootReducer = combineReducers({
     teacher:TeacherReducer,

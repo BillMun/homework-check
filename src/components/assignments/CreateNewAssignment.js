@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import axios from 'axios'
 import { useDispatch, useSelector } from "react-redux";
 import Select from 'react-select'
-import { getAssignments, getClassrooms } from "../../store/Teacher";
+import { getAssignments, getClassrooms} from "../../store/redux";
 import Option from "./Option";
 
 function CreateNewAssignment (){
@@ -30,10 +30,8 @@ function CreateNewAssignment (){
             [props]:event.target.value
         })
     }
-
     const handleOptionChange = (event)=>{
         setwhichClass({...whichClass, classroomId:event})
-        console.log(whichClass)
     }
 
     const options = classrooms.map(classroom=>{
@@ -45,12 +43,18 @@ function CreateNewAssignment (){
         const createdAssignClass = await axios.post('/api/assignmentClassroom',obj)
         return createdAssignClass
     }
+    const createStudentAssign = async (obj)=>{
+        const createStudentAssign = await axios.post(`/api/studentAssignment`, obj)
+        return createStudentAssign
+    }
     
     const handleClick = async ()=>{
         let {data} = await createNewAssignment(newAssignment)
         whichClass.classroomId
-        .forEach(async elem=>await createAssignClass({assignmentId:data.id, classroomId:elem.value})
-        )
+        .forEach(async elem=>await createAssignClass({assignmentId:data.id, classroomId:elem.value}))
+        let classroom = classrooms.filter(o1=> whichClass.classroomId.some(o2=>o1.id==o2.value))
+        console.log(classroom)
+        classroom.forEach(elem=>elem.students.forEach(async elem=>await createStudentAssign({assignmentId: data.id, studentId: elem.id})))
         dispatch(getAssignments())
         dispatch(getClassrooms())
         newSubmit(!submit)
