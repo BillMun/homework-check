@@ -1,6 +1,6 @@
 const port = process.env.PORT || 3000;
 const app = require('./app');
-const db = require('./db')
+const db = require('./db/index')
 
 const init = async () => {
     await db.syncAndSeed();

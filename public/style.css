@@ -1,0 +1,101 @@
+
+
+.navbar {
+    background-color: #eee;
+    color: grey;
+    justify-content: right;
+    display:flex;
+    width:90%;
+    align-items: center;
+  }
+
+#navItem{
+    margin:10px
+}
+
+img{
+    max-width: 800px;
+    max-height: 800px;
+}
+
+.containerImg{
+    max-height: 75px;
+    max-width: 75px;
+}
+.delete{
+    color:red
+}
+
+.outerContainer{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.contentContainer{
+    float:right;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex:4;
+}
+.classroomContainer{
+    margin:10px;
+    border: 2px;
+    border-color: black;
+    border-radius: 5;
+    flex:4;
+    border-style:solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.createContainer{
+    float:left;
+    display:flex;
+    margin:10px;
+
+    flex:.33;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    flex-wrap:wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.innerContainer{
+    margin:10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.studentContainer{
+    margin:10px;
+    border: 2px;
+    border-color: black;
+    border-radius: 5;
+    width: 100px;
+    height: 120px;
+    border-style:solid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+} 
+.studentName{
+    width:80px
+}
+.single{
+    flex:4
+}
+.small{
+    font-size:small
+}
+.button{
+    height:25px;
+    width:45px;
+    font-size: x-small;
+}
+.xsmall{
+    font-size: x-small;
+}
