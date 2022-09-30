@@ -33,7 +33,7 @@ router.get('/:id/classrooms', requireToken, async (req,res,next)=>{
     try{
         const teacherClassrooms = await Classroom.findAll({
             include:[
-                {model:Student},
+                {model:Student, include:[{model:StudentAssignment, include:{model:Assignment}}]},
                 {model:AssignmentClassroom, include:Assignment}],
             where:{
                 teacherId:req.params.id

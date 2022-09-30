@@ -52,10 +52,18 @@ const syncAndSeed = async () => {
 
     const triangle = await Assignment.create({name:'Triangle Inequality', teacherId:munkacsy.id, dueDate:'2022-03-05'})
     const factor = await Assignment.create({name:'Factoring Quadratic Expressions', teacherId:munkacsy.id, dueDate:'2022-03-07',})
+    await Assignment.bulkCreate([
+      {name:'Sum and Difference of Cubes', teacherId:munkacsy.id, dueDate:'2022-03-07',},
+      {name:'Factoring Polynomials', teacherId:munkacsy.id, dueDate:'2022-03-07',},
+      {name:'Solving Polynomials by Factoring', teacherId:munkacsy.id, dueDate:'2022-03-07',}
+    ])
     const assignments = await AssignmentClassroom.bulkCreate([
       {assignmentId:triangle.id, classroomId:block1.id}, 
       {assignmentId:factor.id, classroomId:block1.id},
-      {assignmentId:factor.id, classroomId:block2.id}])
+      {assignmentId:factor.id, classroomId:block2.id},
+    {assignmentId:3, classroomId:2},
+  {assignmentId:4, classroomId:2},
+  {assignmentId:5, classroomId:2}])
     
     const studentAssigns = await StudentAssignment.bulkCreate([
       {studentId:megan.id, assignmentId:triangle.id, completed:true},

@@ -9,6 +9,11 @@
     align-items: center;
   }
 
+#createStudent{
+   background-color: rgb(18, 232, 18);
+   border: 3px;
+}
+
 #navItem{
     margin:10px
 }
@@ -16,6 +21,24 @@
 img{
     max-width: 800px;
     max-height: 800px;
+}
+
+.loginContainer{
+    display:flex;
+    justify-content: center;
+    height:flex;
+    width:200px;
+    flex-direction:column;
+    border:2px;
+    border-color: black;
+    border-radius: 5px;
+    margin:2px;
+    border-style:solid;
+}
+.charts{
+    display:flex;
+    height:800px;
+    width:400 px
 }
 
 .containerImg{
@@ -29,7 +52,6 @@ img{
 .outerContainer{
     display: flex;
     flex-direction: row;
-    
 }
 
 .contentContainer{
@@ -54,7 +76,6 @@ img{
     float:left;
     display:flex;
     margin:10px;
-
     flex:.33;
     border: 2px;
     border-color: black;
@@ -75,13 +96,19 @@ img{
     border: 2px;
     border-color: black;
     border-radius: 5;
-    width: 100px;
+    width: 120px;
     height: 120px;
     border-style:solid;
     text-align: center;
     justify-content: center;
     align-items: center;
+    background-color: lightgrey;
 } 
+.singleStudentContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .studentName{
     width:80px
 }
@@ -98,4 +125,13 @@ img{
 }
 .xsmall{
     font-size: x-small;
+}
+.classroomsContainer{
+    background-image: url(https://i.pinimg.com/736x/1a/c6/66/1ac6665aff3e0ba176993b3a6583d2d7--paper-texture-industrial.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    margin:10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }

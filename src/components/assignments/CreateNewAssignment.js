@@ -2,13 +2,14 @@ import React, {useEffect, useState} from "react";
 import axios from 'axios'
 import { useDispatch, useSelector } from "react-redux";
 import Select from 'react-select'
-import { getAssignments, getClassrooms} from "../../store/redux";
+import { getAssignments } from "./assignmentsSlice";
+import { getClassrooms } from "../classrooms/classroomsSlice";
 import Option from "./Option";
 
 function CreateNewAssignment (){
     const dispatch = useDispatch()
-    const teacher = useSelector(state=>state.teacher)
-    const classrooms = useSelector(state=>state.classrooms)
+    const teacher = useSelector(state=>state.teacher).teacher
+    const classrooms = useSelector(state=>state.classrooms).classrooms
     const [whichClass,setwhichClass]=useState([])
 
     

@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, {useState,useEffect} from "react";
 import { useDispatch } from "react-redux";
-import {getAssignments, getClassrooms} from '../../store/redux'
+import { getAssignments } from "../assignments/assignmentsSlice";
+import { getClassrooms } from "./classroomsSlice";
 
 
 function StudentGrade (props){

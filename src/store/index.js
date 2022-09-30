@@ -1,13 +1,25 @@
-import {createStore, applyMiddleware, combineReducers} from "redux";
-import thunk from "redux-thunk";
-import loggingMiddleware from 'redux-logger'
-import { AssignmentReducer, ClassroomReducer, TeacherReducer } from "./redux";
+import {configureStore, combineReducers, getDefaultMiddleware} from '@reduxjs/toolkit'
+import {applyMiddleware} from 'redux'
+import loginReducer from '../components/login/loginSlice'
+import assignmentsReducer from '../components/assignments/assignmentsSlice'
+import classroomsReducer from '../components/classrooms/classroomsSlice'
+import thunkMiddleware from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import logger from 'redux-logger'
+
 
 const rootReducer = combineReducers({
-    teacher:TeacherReducer,
-    classrooms:ClassroomReducer,
-    assignments:AssignmentReducer
+    assignments: assignmentsReducer,
+    teacher: loginReducer,
+    classrooms: classroomsReducer
 })
-const store = createStore(rootReducer, applyMiddleware(thunk, loggingMiddleware))
+
+const composedEnhancer = composeWithDevTools(applyMiddleware(thunkMiddleware, logger))
+
+export const store = configureStore({
+    reducer: rootReducer, 
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+
+})
 
 export default store;

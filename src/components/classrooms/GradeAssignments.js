@@ -5,8 +5,8 @@ import StudentGrade from "./StudentGrade";
 
 function GradeAssignments (){
     const params = useParams()
-    const classrooms = useSelector(state=>state.classrooms)
-    const assignments = useSelector(state=>state.assignments)
+    const classrooms = useSelector(state=>state.classrooms).classrooms
+    const assignments = useSelector(state=>state.assignments).assignments
     const [assignId, setAssignId]= useState('')
     const [grading, setGrading]=useState(false)
     let classroom = classrooms.filter(elem => {if(elem.id==params.id) return true})[0]
@@ -22,10 +22,10 @@ function GradeAssignments (){
     }
     useEffect(()=>{},[grading])
     const assignment = assignments.filter(elem => {if(elem.id==assignId) return true})[0]
-    const seats = seatingChart(classroom.rows, classroom.cols)
-    classroom.students.forEach(elem=>seats[elem.row][elem.col]=elem)
+    const seats = assignments.length ? seatingChart(classroom.rows, classroom.cols):[]
+    const seating = assignments.length ? classroom.students.forEach(elem=>seats[elem.row][elem.col]=elem) :[]
     return(
-        <div>
+        <div> {assignments.length ? <div>
             <h1>{classroom.name}</h1>
             <select onClick={(event)=>{
                 setAssignId(Number(event.target.value))
@@ -54,6 +54,7 @@ function GradeAssignments (){
                     </div> )}
                 </div>)}</>:null}
             </div>
+            </div>:null}
         </div>
     )
 }

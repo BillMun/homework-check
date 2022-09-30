@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from 'axios'
-import { getClassrooms } from "../../store/redux";
+import { getClassrooms } from "./classroomsSlice";
 
 function CreateClassroom (){
-    const teacher = useSelector(state=>state.teacher)
+    const teacher = useSelector(state=>state.teacher).teacher
     const [newClassroom, setNewClassroom] = useState({teacherId:teacher.id, rows:1, cols:1})
     const dispatch = useDispatch()
     
