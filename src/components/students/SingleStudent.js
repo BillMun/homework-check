@@ -13,6 +13,7 @@ function SingleStudent (){
         else return acc},0):null
     const data = classroom ? [{x:'complete', total:countTrue},{x:'missing', total:student.studentAssignments.length-countTrue}]:null
     const ticks = classroom ? student.studentAssignments.map((elem,index)=>index+1):null
+
     return (
         <div>
             {classroom ?
@@ -25,6 +26,14 @@ function SingleStudent (){
                     <h4>{assignment.assignment.name} is {assignment.completed ? 'complete':'missing'}</h4>
                     </div>)}
                 </div>
+                    {/* <svg>
+                        <defs>
+                          <linearGradient id="linear" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%"   stopColor="green"/>
+                            <stop offset="100%" stopColor="red"/>
+                           </linearGradient>
+                        </defs>
+                    </svg>         */}
                 <div className='charts'>
                     <VictoryChart
                     responsive = {false}
@@ -42,12 +51,13 @@ function SingleStudent (){
                         />
                         <VictoryAxis
                         dependentAxis
-                        
+                        tickValues={ticks.length < 8 ? ticks : null}
                         tickFormat={(x)=>Math.floor(x)}
                         />
                         <VictoryBar
                         style={{
-                            data:{fill:({datum})=> datum.x == 'complete' ? 'green':'red'},
+                            data:{
+                                fill: ({datum})=> datum.x === 'complete' ? 'green' : 'red'}
                         }}
                         barWidth={30}
                         data={data}

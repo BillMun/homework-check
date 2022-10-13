@@ -41,7 +41,7 @@ function LoginPage (){
                     <label>Email</label>
                         <input type='text' onChange={handleChange('email')} name='email'/>
                     <label>Password</label>
-                        <input type='text' onChange ={handleChange('password')} name='password'/>
+                        <input type='password' onChange ={handleChange('password')} name='password'/>
                     <button type='submit'>Login</button>
                 </form>
                 <Link to ='/signup'>

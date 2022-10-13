@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run build-watch & npm run start-server ",
-    "build-watch": "webpack -w",
+    "build": "webpack",
+		"build:dev": "npm run build -- --watch --mode=development",
     "start-server": "JWT=shh nodemon --watch server -e js,html server/index.js"
   },
   "keywords": [],
