@@ -1,1 +1,1 @@
-This project attempts to create a lightweight app where teachers can create classrooms, assign students to those classrooms create homework assignments for all classrooms or just one. Teachers can then easily "check homework". 
+This project attempts to create a lightweight app where teachers can create classrooms, assign students to those classrooms create homework assignments for all classrooms or just one. Teachers can then easily "check homework". Features a graphing for homework completion and a way for teachers to upload their classlist using an excel file. 
