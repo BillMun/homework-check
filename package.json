@@ -7,7 +7,8 @@
     "start": "node server/index.js",
     "build": "webpack",
 		"build:dev": "npm run build -- --watch --mode=development",
-    "start-server": "JWT=shh nodemon --watch server -e js,html server/index.js"
+    "start-server": "JWT=shh nodemon --watch server -e js,html server/index.js",
+    "start:dev": "JWT=shhh nodemon server --ignore src/ --ignore dist/ & npm run build:dev"
   },
   "keywords": [],
   "author": "",
