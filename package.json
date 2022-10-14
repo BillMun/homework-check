@@ -4,11 +4,11 @@
   "description": "A review time project",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
+    "start": "JWT=shh node server/index.js",
     "build": "webpack",
 		"build:dev": "npm run build -- --watch --mode=development",
     "start-server": "JWT=shh nodemon DATABASE_URL = postgres://qxbptbptopjdka:77bc4bccb38dddf7037e24105f1f291ecf4f50e8697f1e41d74ad34e66b8c27e@ec2-44-199-9-102.compute-1.amazonaws.com:5432/d53n9530hlouqj --watch server -e js,html server/index.js",
-    "start:dev": "JWT=shhh nodemon server --ignore src/ --ignore dist/ & npm run build:dev"
+    "start:dev": "JWT=shh nodemon server --ignore src/ --ignore dist/ & npm run build:dev"
   },
   "keywords": [],
   "author": "",

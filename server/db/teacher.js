@@ -6,7 +6,6 @@ const bcrypt = require('bcrypt')
 const Teacher = db.define('teacher',{
     name:{
         type: Sequelize.STRING,
-        allowNull:false
     },
     email:{
         type: Sequelize.STRING,

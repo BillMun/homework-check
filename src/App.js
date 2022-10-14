@@ -14,6 +14,7 @@ import { getClassrooms } from "./components/classrooms/classroomsSlice";
 import { getAssignments } from "./components/assignments/assignmentsSlice";
 import AllStudents from "./components/students/AllStudents";
 import SingleStudent from "./components/students/SingleStudent";
+import Signup from "./components/login/Signup";
 
 function App(){
     const dispatch = useDispatch()
@@ -27,14 +28,15 @@ function App(){
             <NavBar/>
             <Routes>
                 <Route index element = {<LoginPage/>}/>
-                <Route path ={'/classrooms'} element={<AllClassrooms/>}/>
+                <Route path = {'/classrooms'} element={<AllClassrooms/>}/>
                 <Route path = {'/assignments'} element= {<AllAssignments/>}/>
                 <Route path = {'/students'} element = {<AllStudents/>}/>
                 <Route path = {`/classrooms/:id`} element={<SingleClassroom/>}/>
                 <Route path = {`/assignments/:id`} element={<SingleAssignment/>}/>
-                <Route path={`/gradeAssignments/:id`} element={<GradeAssignments/>}/>
-                <Route path={`/assignments/create`} element={<CreateNewAssignment/>}/>
-                <Route path={`/students/:studentId/:classroomId`} element ={<SingleStudent/>} />
+                <Route path = {`/gradeAssignments/:id`} element={<GradeAssignments/>}/>
+                <Route path = {`/assignments/create`} element={<CreateNewAssignment/>}/>
+                <Route path = {`/students/:studentId/:classroomId`} element ={<SingleStudent/>} />
+                <Route path = {'/signup'} element = {<Signup/>}/>
             </Routes>
         </div>
 
