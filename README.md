@@ -1,6 +1,7 @@
 <h1>Homework Checker</h1>
 <p>This project attempts to create a lightweight app where teachers can create classrooms, assign students to those classrooms, and then create and grade homework assignments for all classrooms or just one. Teachers can then easily "check homework". Features a graphing for homework completion and a way for teachers to upload their classlist using an excel file. </p>
 
+Please check out the deployed website at:
 [Homework Checker](http://homeworkr.herokuapp.com/)
 
 <br/>
@@ -11,8 +12,8 @@
 [![Node.js][Node.js]][Node.js-url]
 [![Express][Express]][Express-url]
 [![Sequelize][Sequelize]][Sequelize-url]
-[![PostGreSQL][PostGreSQL][PostGreSQL-url]]
-[![Redux][Redux][Redux-url]]
+[![PostGreSQL][PostGreSQL]][PostGreSQL-url]
+[![Redux][Redux]][Redux-url]
 
 ### Installation
 
@@ -41,8 +42,8 @@ This is a dev environment so redux logger is on. Enjoy!
 [Sequelize]: https://img.shields.io/badge/Sequelize-ADD8E6?style=for-the-badge&logo=Sequelize&logoColor=blue
 [Sequelize-url]:https://sequelize.org/
 
-[PostGreSQL]: https://img.shields.io/badge/PostGreSQL-FFFFFF?style=for-the-badge&logo=PostGreSQL&logoColor=black
+[PostGreSQL]: https://img.shields.io/badge/PostGreSQL-0000FF?style=for-the-badge&logo=PostGreSQL&logoColor=black
 [PostGreSQL-url]:https://www.postgresql.org/
 
-[Redux]: https://img.shields.io/badge/Redux-A020F0?style=for-the-badge&logo=Redux&logoColor=black
+[Redux]: https://img.shields.io/badge/Redux-A020F0?style=for-the-badge&logo=Redux&logoColor=white
 [Redux-url]:https://redux-toolkit.js.org/
