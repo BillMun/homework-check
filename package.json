@@ -7,7 +7,7 @@
     "start": "JWT=shh node server/index.js",
     "build": "webpack",
 		"build:dev": "npm run build -- --watch --mode=development",
-    "start-server": "JWT=shh nodemon DATABASE_URL=postgres://$(whoami) --watch server -e js,html server/index.js",
+    "start-server": "JWT=shh nodemon DATABASE_URL= postgres://vuzgpqdhxjswof:8b07d4bba727343532945d496aeef0a79036154d5ea9d84664261d00712fc5ab@ec2-3-218-171-44.compute-1.amazonaws.com:5432/d72vnltd6vh2g6 --watch server -e js,html server/index.js",
     "start:dev": "JWT=shh nodemon server --ignore src/ --ignore dist/ & npm run build:dev"
   },
   "keywords": [],
