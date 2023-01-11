@@ -1,4 +1,4 @@
-const port = process.env.DATABASE_URL || 5432;
+const port = process.env.PORT || 5432;
 const app = require('./app');
 const db = require('./db/index')
 
